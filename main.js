@@ -94,6 +94,7 @@ while(resposta4 == "ok"){
 
 // Day 4
 
+/*
 const maximo = 10;
 const minimo = 0;
 
@@ -116,3 +117,32 @@ while(attempts < TRIES){
         }
     }
 }
+*/
+
+// Day 5
+
+/*
+
+
+*/
+let listaDeCategorias = ["Frutas", "Latícinios", "Congelados", "Doces"]
+let listaDeCompras = [
+    [listaDeCategorias[0], []],
+    [listaDeCategorias[1], []],
+    [listaDeCategorias[2], []],
+    [listaDeCategorias[3], []]
+]
+let comida;
+let categoria;
+
+let adicionar = prompt("você deseja adicionar uma comida na sua lista de compras? você deve responder com sim ou nao");
+
+while (adicionar == "sim"){
+    
+    comida = prompt("qual comida você deseja inserir?");
+    categoria = prompt("Em qual categoria a comida se encaixa? 1 para frutas, 2 para laticínios, 3 para congelados, 4 para doces!")
+    listaDeCompras[categoria - 1][1].push(comida);
+    adicionar = prompt("você deseja adicionar uma comida na sua lista de compras? você deve responder com sim ou nao");
+ 
+} 
+alert(listaDeCompras);
