@@ -47,7 +47,7 @@ if (resposta == 2){
 
 // Day 3
 
-
+/*
 let resposta1 = prompt("Gostaria de seguir para área de Front-End ou seguir para a área de Back-End? (1 para front, 2 para back)");
 let resposta2 = ""
 if (resposta1 == 1) {
@@ -88,4 +88,31 @@ let resposta5 = "";
 while(resposta4 == "ok"){
     resposta5 = prompt("Quais tecnologias gostaria de se especializar?");
     resposta4 = prompt("Tem mais alguma tecnologia que gostaria de se especializar?(ok para sim)");
+}
+
+*/
+
+// Day 4
+
+const maximo = 10;
+const minimo = 0;
+
+let answer = Math.floor(Math.random() * (maximo - minimo + 1) + minimo)
+console.log(answer);
+let attempts = 0;
+let respostaUsuario;
+let TRIES = 3;
+while(attempts < TRIES){
+    respostaUsuario = prompt("Advinhe o numero mágico!")
+    if(respostaUsuario == answer){
+        alert("Parabéns, você acertou");
+        break;
+    } else {
+        attempts++;
+        if(TRIES - attempts > 0){
+            alert(`Não foi dessa vez, você tem mais ${TRIES - attempts} tentativas`);
+        } else {
+            alert("Que pena, acabaram suas tentativas!!!")
+        }
+    }
 }
