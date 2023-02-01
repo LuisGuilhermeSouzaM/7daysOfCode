@@ -149,6 +149,7 @@ alert(listaDeCompras);
 
 // Day 6
 
+
 let frutas = [];
 let laticinios = [];
 let doces = [];
