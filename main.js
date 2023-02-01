@@ -122,9 +122,6 @@ while(attempts < TRIES){
 // Day 5
 
 /*
-
-
-*/
 let listaDeCategorias = ["Frutas", "Latícinios", "Congelados", "Doces"]
 let listaDeCompras = [
     [listaDeCategorias[0], []],
@@ -146,3 +143,62 @@ while (adicionar == "sim"){
  
 } 
 alert(listaDeCompras);
+
+*/
+
+
+// Day 6
+
+let frutas = [];
+let laticinios = [];
+let doces = [];
+let congelados = [];
+let comida = "";
+let categoria = "";
+
+let adicionarMais = "sim";  // valor inicial como "sim", porque a primeira vez sempre vai entrar no while
+while(adicionarMais != "não"){
+    adicionarMais = prompt("Você deseja adicionar uma comida na lista de compras ou deletar? Responda 'sim', 'não' ou 'deletar'.");
+    while (adicionarMais != "sim" && adicionarMais != "não" && adicionarMais != "deletar") {  //enquanto o texto lido for diferente de "sim" e de "não", exibir que não foi reconhecido e perguntar novamente
+	alert(`Operação não reconhecida!`);
+        adicionarMais = prompt("Você deseja adicionar uma comida na lista de compras? Responda 'sim' ou 'não'.");
+    }
+	
+    if (adicionarMais === "não"){  //se o texto lido for "não", sair do while
+        break;
+    }
+    else if(adicionarMais === "deletar"){
+        alert(`Lista de compras:\n  Frutas: ${frutas}\n  Laticínios: ${laticinios}\n  Doces: ${doces}\n  Congelados: ${congelados}`);
+        itemADeletar = prompt("qual dos itens mostrados gostaria de deletar");
+        contemFrutas = frutas.indexOf(itemADeletar);
+        contemLaticinios = laticinios.indexOf(itemADeletar);
+        contemDoces = doces.indexOf(itemADeletar);
+        contemCongelados =congelados.indexOf(itemADeletar);
+        if(contemFrutas != -1)
+            delete frutas[contemFrutas];
+        else if (contemLaticinios != -1)
+            delete laticinios[contemLaticinios];
+        else if (contemDoces != -1)
+            delete doces[contemDoces];
+        else if (contemCongelados != -1)
+            delete congelados[contemCongelados];
+        else
+            alert("Não foi possível encontrar o item dentro da lista");
+        alert(`Lista de compras:\n  Frutas: ${frutas}\n  Laticínios: ${laticinios}\n  Doces: ${doces}\n  Congelados: ${congelados}`);
+    } else if(adicionarMais == "sim"){
+        comida = prompt("Qual comida você deseja inserir?");
+        categoria = prompt("Em qual categoria essa comida se encaixa: 'frutas', 'laticínios', 'doces' ou 'congelados'?");
+        if(categoria === 'frutas'){
+            frutas.push(comida);
+        } else if (categoria === 'laticínios'){
+            laticinios.push(comida);
+        } else if (categoria === 'doces'){
+            doces.push(comida);
+        } else if (categoria === 'congelados'){
+            congelados.push(comida);
+        } else {
+            alert("Essa categoria não foi pré-definida.")
+        }
+    }
+}
+alert(`Lista de compras:\n  Frutas: ${frutas}\n  Laticínios: ${laticinios}\n  Doces: ${doces}\n  Congelados: ${congelados}`);
